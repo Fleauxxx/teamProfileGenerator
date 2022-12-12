@@ -37,6 +37,10 @@ function addTeamMember(){
         const manager = new Manager(response.name, response.id, response.email, response.officeNumber)
         createTeam();
     })
+    .then((response) => {
+        console.log('User Input', response)
+        // const userInput = ` ${response.name}`
+    })
     
     }
 
@@ -50,9 +54,18 @@ function addTeamMember(){
                 choices: ['Engineer', 'Intern', 'Finish building'],
             }
         ])
-        .then((response) => {
-            const engineer = new Engineer(response.name, response.id, response.email, response.gitHub)
-            addEngineer();
+        .then((response) =>{
+            switch (response.memberChoice) {
+                case 'Engineer':
+                    addEngineer();
+                    break;
+                case 'Intern':
+                    addIntern();
+                    break;
+                case 'Finish building':
+                    finishBuilding();
+                    return;
+            }
         })
     }
     
@@ -66,6 +79,9 @@ function addTeamMember(){
                 name: 'gitHub'
             }
         ])   
+        .then((response) => {
+            const engineer = new Engineer(response.name, response.id, response.email, response.gitHub)
+        })
     };
 
     function addIntern(){
@@ -79,7 +95,6 @@ function addTeamMember(){
         ])
         .then((response) => {
             const intern = new Intern(response.name, response.id, response.email, response.school)
-            addIntern();
         })
     };
 
