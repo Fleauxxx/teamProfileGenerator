@@ -1,6 +1,8 @@
 // Packages included in this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 const Manager = require('./lib/manager');
 
 // array of questions for user input
@@ -49,9 +51,43 @@ function addTeamMember(){
             }
         ])
         .then((response) => {
-            const engineer = new Engineer(response.)
-
+            const engineer = new Engineer(response.name, response.id, response.email, response.gitHub)
+            addEngineer();
         })
     }
+    
+    
+    function addEngineer(){
+        inquirer
+        .prompt([
+            {
+                type: 'input',
+                message: 'Enter your GitHub username',
+                name: 'gitHub'
+            }
+        ])   
+    };
+
+    function addIntern(){
+        inquirer
+        .prompt([
+            {
+                type: 'input',
+                message: 'Please enter the name of your school',
+                name: 'school'
+            }
+        ])
+        .then((response) => {
+            const intern = new Intern(response.name, response.id, response.email, response.school)
+            addIntern();
+        })
+    };
+
+    function finishBuilding(){
+
+    }
+    
 
     addTeamMember();
+
+   
