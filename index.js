@@ -45,7 +45,7 @@ function addTeamMember() {
       createTeam();
     })
   }
-
+// function that will allow you to add a team member or finish the build.
 function createTeam() {
   inquirer
     .prompt([
@@ -151,6 +151,7 @@ function addIntern() {
     });
 }
 
+// function to add a new member to the generator
 function newMember() {
   inquirer
     .prompt([
@@ -173,6 +174,7 @@ function newMember() {
     });
 };
 
+// function to finish building the profile generator and render the html
 function finishBuilding() {
   console.log('html being generated')
   console.log(team);

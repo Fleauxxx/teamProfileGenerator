@@ -1,23 +1,12 @@
 const Manager = require("./lib/Manager")
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-
-// function generateHtml(team = []) {
-//     team.forEach(member => console.log(member));
-//     const manager = team.find(member => member.role === 'Manager');
-//     const engineer = team.find(member => member.role === 'Engineer');
-//     const intern = team.find(member => member.role === 'Intern');
-//     const teamMemberMarkup = team
-//         .filter(member => member.role !== 'Manager')
-//         .map(member => `<h5>${member.name}</h5>
-//         <h5>${member.role}</h5>`)
-//         .join(''); 
  
 const generateTeam = (team) => {
   console.log(team);
-  // Create an empty array to push html elements on to and loop through the team data
+  // An empty array to push html elements to and loop through the data
   const html = [];
-  // Create functions for each type of employee that returns HTML data
+  // Create different functions for each employee role that returns HTML data
   const generateManager = manager => {
       let managerCard = `
       <div class="card">
@@ -67,6 +56,7 @@ const generateEngineer = engineer => {
   html.push(engineerCard);
 }
 
+// for loop for all of the team members
 for (let i = 0; i < team.length; i++) {
         if (team[i].getRole() === "Manager") {
             generateManager(team[i]);
@@ -78,9 +68,11 @@ for (let i = 0; i < team.length; i++) {
             generateIntern(team[i]);
         }
     }
-    // join the HTML blocks
+    // join HTML blocks of code
     return html.join('');
 }
+
+// export function to generate page with profile cards
 module.exports = generateHtml = team => {
 
     return`
