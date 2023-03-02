@@ -45,7 +45,7 @@ function addTeamMember() {
       createTeam();
     })
   }
-// function that will allow you to add a team member or finish the build.
+// function that will allow you to add a team member or finish the build.cd
 function createTeam() {
   inquirer
     .prompt([
