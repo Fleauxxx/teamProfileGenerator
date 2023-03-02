@@ -29,6 +29,7 @@ const generateTeam = (team) => {
     <div class="card">
     <div class="cardheader">
     <h4>${intern.name}<h4>
+    <h4>Intern</h4>
     </div>
     <div class="content">
       <h6>ID:${intern.id}</h6>
@@ -45,6 +46,7 @@ const generateEngineer = engineer => {
   <div class="card">
         <div class="cardheader">
         <h4>${engineer.name}<h4>
+        <h4>Engineer</h4>
         </div>
         <div class="content">
           <h6>ID:${engineer.id}</h6>
