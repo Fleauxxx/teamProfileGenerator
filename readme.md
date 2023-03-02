@@ -1,5 +1,3 @@
-# 09 Node.js Challenge: Professional README Generator
-
 ## My Task
 
 In this module 10 Challenge I was charged with the task of building a node.js command line application that takes information like name and id number for employees on a team and generate an HTML webpage that displays a detailed card with that information
